@@ -4,7 +4,7 @@
 #
 Name     : compat-json-c-soname4
 Version  : 0.13.1
-Release  : 17
+Release  : 18
 URL      : https://s3.amazonaws.com/json-c_releases/releases/json-c-0.13.1.tar.gz
 Source0  : https://s3.amazonaws.com/json-c_releases/releases/json-c-0.13.1.tar.gz
 Summary  : A JSON implementation in C
@@ -61,7 +61,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1644260055
+export SOURCE_DATE_EPOCH=1664891988
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -92,10 +92,10 @@ cd ../build32;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1644260055
+export SOURCE_DATE_EPOCH=1664891988
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/compat-json-c-soname4
-cp %{_builddir}/json-c-0.13.1/COPYING %{buildroot}/usr/share/package-licenses/compat-json-c-soname4/0cd23537e3c32497c7b87157b36f9d2eb5fca64b
+cp %{_builddir}/json-c-%{version}/COPYING %{buildroot}/usr/share/package-licenses/compat-json-c-soname4/0cd23537e3c32497c7b87157b36f9d2eb5fca64b || :
 pushd ../build32/
 %make_install32
 if [ -d  %{buildroot}/usr/lib32/pkgconfig ]
